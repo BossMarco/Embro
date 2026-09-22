@@ -48,19 +48,29 @@
   gap: 8px;
 }
 .slideControls button {
-  width: 30px;
-  height: 4px;
+  position: relative;
+  width: 36px;
+  height: 36px;
   border: 0;
-  background: rgba(255, 255, 255, 0.45);
+  background: transparent;
   cursor: pointer;
 }
-.slideControls button.slideDotActive {
+.slideControls button:not(.pauseButton):after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  left: 3px;
+  top: 16px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+}
+.slideControls button.slideDotActive:after {
   background: #fff;
 }
 .slideControls .pauseButton {
   width: auto;
-  height: auto;
-  padding: 5px 8px;
+  min-height: 36px;
+  padding: 5px 10px;
   color: #fff;
   background: rgba(19, 23, 29, 0.72);
   font-size: 12px;
