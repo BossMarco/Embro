@@ -23,6 +23,7 @@ export function SiteHeader() {
       <nav aria-label="Main navigation">
         <Link href="/services/custom-embroidery">Services</Link>
         <Link href="/service-areas">RGV service areas</Link>
+        <Link href="/gallery">Gallery</Link>
         <Link href="/#portfolio">Our work</Link>
         <Link href="/#contact">Contact</Link>
       </nav>

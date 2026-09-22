@@ -11,6 +11,11 @@
   gap: 24px;
   margin-bottom: clamp(56px, 8vw, 110px);
 }
+.adminActions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
 .brand {
   color: #ed2b36;
   font-size: 13px;
@@ -165,11 +170,89 @@
   font-size: 14px;
   padding: 12px;
 }
+.uploadPanel {
+  background: #20242b;
+  margin-top: 52px;
+  max-width: 820px;
+  padding: clamp(24px, 4vw, 48px);
+}
+.uploadForm {
+  display: grid;
+  gap: 18px;
+}
+.uploadForm label {
+  display: grid;
+  font-size: 14px;
+  font-weight: 800;
+  gap: 8px;
+}
+.uploadForm input,
+.uploadForm select {
+  background: #f8f8f5;
+  border: 0;
+  color: #13171d;
+  font: inherit;
+  min-height: 48px;
+  padding: 10px 12px;
+}
+.uploadForm input[type="file"] {
+  padding: 10px;
+}
+.uploadForm button {
+  background: #ed2b36;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  min-height: 48px;
+  padding: 10px 14px;
+}
+.uploadForm button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.formColumns {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+}
+.uploadStatus {
+  background: #f8f8f5;
+  color: #13171d;
+  margin: 0;
+  padding: 12px;
+}
+.adminGallery {
+  margin-top: 70px;
+  max-width: 820px;
+}
+.adminGallery h2 {
+  font-size: 2rem;
+  letter-spacing: -0.06em;
+}
+.adminGallery ul {
+  list-style: none;
+  margin: 22px 0;
+  padding: 0;
+}
+.adminGallery li {
+  border-top: 1px solid #3b4047;
+  display: grid;
+  gap: 5px;
+  padding: 15px 0;
+}
+.adminGallery small {
+  color: #c8cbd0;
+}
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;
   }
   .topline {
     align-items: flex-start;
+  }
+  .formColumns {
+    grid-template-columns: 1fr;
   }
 }

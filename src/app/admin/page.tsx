@@ -41,11 +41,16 @@ export default async function AdminPage() {
         <Link className={styles.brand} href="/">
           Embro Xpress
         </Link>
-        <form action={logout}>
-          <button className={styles.logout} type="submit">
-            Log out
-          </button>
-        </form>
+        <div className={styles.adminActions}>
+          <Link className={styles.back} href="/admin/gallery">
+            Manage gallery
+          </Link>
+          <form action={logout}>
+            <button className={styles.logout} type="submit">
+              Log out
+            </button>
+          </form>
+        </div>
       </div>
       <h1 className={styles.heading}>
         Traffic
