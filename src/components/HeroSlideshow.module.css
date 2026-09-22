@@ -7,4 +7,5 @@
 .slideControls { position:absolute; z-index:2; right:28px; bottom:29px; display:flex; gap:8px; }
 .slideControls button { width:30px; height:4px; border:0; background:rgba(255,255,255,.45); cursor:pointer; }
 .slideControls button.slideDotActive { background:#fff; }
+.slideControls .pauseButton { width:auto; height:auto; padding:5px 8px; color:#fff; background:rgba(19,23,29,.72); font-size:12px; font-weight:700; }
 @media (max-width:800px) { .slider { min-height:420px; } }
