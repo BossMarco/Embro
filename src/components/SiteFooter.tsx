@@ -43,6 +43,7 @@ export function SiteFooter() {
           <a href={site.facebook} target="_blank" rel="noreferrer">
             Facebook ↗
           </a>
+          <Link href="/admin">Admin</Link>
         </div>
       </div>
       <p className={styles.copyright}>

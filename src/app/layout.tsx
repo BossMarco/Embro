@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { VisitTracker } from "@/components/VisitTracker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -70,7 +71,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en-US"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <VisitTracker />
+        {children}
+      </body>
     </html>
   );
 }

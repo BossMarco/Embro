@@ -1,0 +1,175 @@
+.shell {
+  min-height: 100vh;
+  background: #13171d;
+  color: #f8f8f5;
+  padding: clamp(24px, 5vw, 72px);
+}
+.topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(56px, 8vw, 110px);
+}
+.brand {
+  color: #ed2b36;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.back,
+.logout {
+  border: 1px solid #5b5f65;
+  color: #f8f8f5;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  padding: 10px 14px;
+}
+.logout {
+  background: transparent;
+  cursor: pointer;
+}
+.heading {
+  font-size: clamp(3.2rem, 8vw, 8.5rem);
+  letter-spacing: -0.09em;
+  line-height: 0.82;
+  margin: 0;
+  max-width: 900px;
+}
+.heading span {
+  color: #ed2b36;
+}
+.intro {
+  color: #c8cbd0;
+  line-height: 1.55;
+  margin: 28px 0 52px;
+  max-width: 620px;
+}
+.stat {
+  background: #ed2b36;
+  color: #fff;
+  display: inline-grid;
+  gap: 4px;
+  min-width: 220px;
+  padding: 26px;
+}
+.stat b {
+  font-size: 3.2rem;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+.stat span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 52px;
+}
+.panel {
+  background: #20242b;
+  padding: 28px;
+}
+.panel h2 {
+  font-size: 1.4rem;
+  letter-spacing: -0.05em;
+  margin: 0 0 22px;
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  align-items: baseline;
+  border-top: 1px solid #3b4047;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 13px 0;
+}
+.list li span {
+  overflow-wrap: anywhere;
+}
+.list b {
+  color: #ed2b36;
+}
+.notice {
+  background: #f8f8f5;
+  color: #13171d;
+  margin-top: 52px;
+  max-width: 820px;
+  padding: 24px;
+}
+.notice b {
+  display: block;
+  margin-bottom: 7px;
+}
+.login {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: #13171d;
+}
+.loginCard {
+  background: #f8f8f5;
+  color: #13171d;
+  max-width: 450px;
+  padding: clamp(30px, 6vw, 64px);
+  width: 100%;
+}
+.loginCard h1 {
+  font-size: clamp(3rem, 9vw, 5rem);
+  letter-spacing: -0.09em;
+  line-height: 0.84;
+  margin: 18px 0;
+}
+.loginCard p {
+  line-height: 1.55;
+}
+.form {
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+}
+.form label {
+  font-size: 13px;
+  font-weight: 800;
+}
+.form input {
+  border: 1px solid #bfc1be;
+  font: inherit;
+  min-height: 48px;
+  padding: 10px 12px;
+}
+.form button {
+  background: #ed2b36;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  min-height: 48px;
+  padding: 10px 14px;
+}
+.error {
+  background: #fee4e4;
+  color: #8e1017;
+  font-size: 14px;
+  padding: 12px;
+}
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .topline {
+    align-items: flex-start;
+  }
+}
