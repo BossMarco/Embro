@@ -24,7 +24,6 @@ export function SiteHeader() {
         <Link href="/services/custom-embroidery">Services</Link>
         <Link href="/service-areas">RGV service areas</Link>
         <Link href="/gallery">Gallery</Link>
-        <Link href="/#portfolio">Our work</Link>
         <Link href="/#contact">Contact</Link>
       </nav>
       <a className={styles.headerCta} href={site.phoneHref}>

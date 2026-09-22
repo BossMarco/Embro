@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeroSlideshow } from "@/components/HeroSlideshow";
-import { ScrollReveal } from "@/components/ScrollReveal";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { serviceAreas, services, site } from "@/lib/site";
@@ -128,67 +127,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-        <section
-          className={`${styles.section} ${styles.portfolio}`}
-          id="portfolio"
-        >
-          <div className={styles.sectionTitle}>
-            <div>
-              <p className={styles.kicker}>From the shop</p>
-              <h2>Real work. Real details.</h2>
-            </div>
-            <p>
-              Every piece is an opportunity to make a team, business, or
-              organization recognizable.
-            </p>
-          </div>
-          <ScrollReveal>
-            <div className={styles.workGrid}>
-              <article
-                className={`${styles.workCard} ${enhancements.workCard}`}
-              >
-                <Image
-                  src="/images/embroidered-caps-stx.jpg"
-                  alt="Custom embroidered STX Aero caps"
-                  fill
-                  sizes="(max-width: 800px) 100vw, 45vw"
-                />
-                <p>
-                  <b>STX Aero caps</b>
-                  <span>Custom logo embroidery</span>
-                </p>
-              </article>
-              <article
-                className={`${styles.workCard} ${enhancements.workCard}`}
-              >
-                <Image
-                  src="/images/embroidered-caps-raf.jpg"
-                  alt="Custom embroidered RAF Motors caps"
-                  fill
-                  sizes="(max-width: 800px) 100vw, 28vw"
-                />
-                <p>
-                  <b>RAF Motors caps</b>
-                  <span>Precision logo embroidery</span>
-                </p>
-              </article>
-              <article
-                className={`${styles.workCard} ${enhancements.workCard}`}
-              >
-                <Image
-                  src="/images/embro-xpress-storefront.jpg"
-                  alt="Embro Xpress storefront in McAllen"
-                  fill
-                  sizes="(max-width: 800px) 100vw, 28vw"
-                />
-                <p>
-                  <b>McAllen shop</b>
-                  <span>Local RGV service</span>
-                </p>
-              </article>
-            </div>
-          </ScrollReveal>
         </section>
         <section className={styles.section}>
           <div className={styles.sectionTitle}>
