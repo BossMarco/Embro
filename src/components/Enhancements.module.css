@@ -6,6 +6,8 @@
 }
 .buttonSecondary {
   display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 12px 17px;
   border: 1px solid #13171d;
   font-size: 14px;
