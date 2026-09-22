@@ -1,46 +1,16 @@
-import styles from "./page.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { serviceAreas, services, site } from "@/lib/site";
+import styles from "./site.module.css";
 
-const phone = "+19565798717";
-const facebook = "https://www.facebook.com/embroxpressrgv";
-const maps = "https://www.google.com/maps/search/?api=1&query=401+W+US+Highway+83+Suite+130+McAllen+TX+78501";
-
-function Arrow() { return <span aria-hidden="true">↗</span>; }
-
-export default function Home() {
-  return (
-    <main className={styles.page}>
-      <nav className={styles.nav} aria-label="Primary navigation">
-        <a className={styles.brand} href="#top" aria-label="Embro Xpress home"><span className={styles.brandMark}>EX</span><span>EMBRO<br />XPRESS</span></a>
-        <div className={styles.navLinks}><a href="#work">Our work</a><a href="#services">Services</a><a href="#visit">Visit us</a></div>
-        <a className={styles.navCta} href={`tel:${phone}`}>Call now <Arrow /></a>
-      </nav>
-
-      <section className={styles.hero} id="top">
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}><span /> McAllen, Texas · RGV</p>
-          <h1>Wear your<br /><em>best work.</em></h1>
-          <p className={styles.lede}>Custom embroidery and uniforms made for the people behind the work.</p>
-          <div className={styles.heroActions}><a className={styles.primaryButton} href={facebook} target="_blank" rel="noreferrer">Start a project <Arrow /></a><a className={styles.textButton} href={`tel:${phone}`}>956 579 8717 <span>→</span></a></div>
-        </div>
-        <div className={styles.heroArt} aria-label="Abstract embroidered textile artwork"><div className={styles.stitchOne}>CREW</div><div className={styles.stitchTwo}>LOCAL</div><div className={styles.thread} /><div className={styles.swatch}>RGV<br /><span>EST. HERE</span></div><div className={styles.needle} aria-hidden="true" /></div>
-        <p className={styles.heroNote}>GOOD THREADS,<br />BETTER IMPRESSIONS.</p>
-      </section>
-
-      <section className={styles.marquee} aria-label="Services"><span>EMBROIDERY</span><i>✳</i><span>UNIFORMS</span><i>✳</i><span>SHIRTS</span><i>✳</i><span>CAPS</span><i>✳</i><span>EMBROIDERY</span></section>
-
-      <section className={styles.intro} id="work"><p className={styles.sectionLabel}>01 / WHAT WE MAKE</p><div><h2>Made to show up.</h2><p>From the first stitch to the final detail, your apparel should look as sharp as the people wearing it.</p></div><a href={facebook} target="_blank" rel="noreferrer" className={styles.outlineButton}>See the latest <Arrow /></a></section>
-
-      <section className={styles.gallery} aria-label="Product categories">
-        <article className={`${styles.galleryCard} ${styles.cardOne}`}><span className={styles.cardNumber}>01</span><div className={styles.shirtShape}><span>YOUR<br />MARK<br />HERE</span></div><h3>Team-ready uniforms</h3></article>
-        <article className={`${styles.galleryCard} ${styles.cardTwo}`}><span className={styles.cardNumber}>02</span><div className={styles.capShape}><span>EX</span></div><h3>Caps with character</h3></article>
-        <article className={`${styles.galleryCard} ${styles.cardThree}`}><span className={styles.cardNumber}>03</span><div className={styles.patchShape}>GOOD<br />WORK</div><h3>Details that last</h3></article>
-      </section>
-
-      <section className={styles.services} id="services"><div className={styles.servicesLead}><p className={styles.sectionLabel}>02 / THE SHOP</p><h2>Put your name<br />on it.</h2><p>Bring an idea, a logo, or a full team list. We’ll help you create apparel that feels like yours.</p></div><div className={styles.serviceList}>{[["01", "Custom embroidery", "A lasting mark for the work you’re proud of."], ["02", "Uniforms", "A pulled-together look for your crew."], ["03", "Shirts & caps", "Everyday pieces made more personal."]].map(([number, title, copy]) => <div className={styles.service} key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><Arrow /></div>)}</div></section>
-
-      <section className={styles.visit} id="visit"><div><p className={styles.sectionLabel}>03 / COME BY</p><h2>Let’s make<br /><em>something</em> good.</h2></div><div className={styles.visitDetails}><p>401 W US Highway 83<br />Suite 130<br />McAllen, TX 78501</p><a href={maps} target="_blank" rel="noreferrer">Get directions <Arrow /></a><a href={`tel:${phone}`}>Call 956 579 8717 <Arrow /></a></div><div className={styles.locationStamp}>MCALLEN<br /><span>RIO GRANDE<br />VALLEY</span></div></section>
-
-      <footer className={styles.footer}><a className={styles.brand} href="#top"><span className={styles.brandMark}>EX</span><span>EMBRO<br />XPRESS</span></a><p>Custom embroidery & uniforms<br /><span>Excelente calidad y servicio.</span></p><a href={facebook} target="_blank" rel="noreferrer">Facebook <Arrow /></a></footer>
-    </main>
-  );
-}
+export default function Home() { const schema={"@context":"https://schema.org","@type":"LocalBusiness",name:site.name,image:`${site.url}/images/embro-xpress-storefront.jpg`,telephone:site.phone,address:{"@type":"PostalAddress",streetAddress:"401 W US Highway 83, Suite 130",addressLocality:"McAllen",addressRegion:"TX",postalCode:"78501",addressCountry:"US"},areaServed:serviceAreas.map(area=>area.name),sameAs:[site.facebook],openingHoursSpecification:[{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday"],opens:"08:00",closes:"17:00"},{"@type":"OpeningHoursSpecification",dayOfWeek:"Friday",opens:"08:00",closes:"14:00"}]};return <div className={styles.shell}><SiteHeader /><main>
+  <section className={styles.hero}><div className={styles.heroCopy}><p className={styles.kicker}>McAllen · Rio Grande Valley</p><h1>Apparel that<br /><span>puts you to work.</span></h1><p>Embro Xpress brings your logo to life with custom embroidery, screen printing, and DTF printing for businesses, teams, and organizations across the RGV.</p><Link className={styles.button} href="#contact">Start your project ↗</Link><div className={styles.trust}><span>Embroidery</span><span>Screen Printing</span><span>DTF</span></div></div><div className={styles.heroImage}><Image src="/images/embroidered-uniforms.jpg" alt="Embroidered Legacy Aero Avionics work uniforms" fill loading="eager" sizes="(max-width: 800px) 100vw, 50vw" /></div></section>
+  <div className={styles.band}><span>CUSTOM EMBROIDERY</span><i>✦</i><span>SCREEN PRINTING</span><i>✦</i><span>DTF PRINTING</span><i>✦</i><span>RIO GRANDE VALLEY</span></div>
+  <section className={`${styles.section} ${styles.intro}`}><p className={styles.kicker}>Your mark, made visible</p><div><h2>Branded apparel for the way RGV works.</h2><p>From a sharp embroidered uniform to printed team shirts and detailed DTF graphics, we help local businesses and groups create apparel that feels intentional. Bring your logo or ask us about getting a project started.</p></div></section>
+  <section className={styles.section}><div className={styles.sectionTitle}><div><p className={styles.kicker}>What we do</p><h2>Built around your brand.</h2></div><p>Explore the decoration method that fits your apparel, logo, and project goals.</p></div><div className={styles.grid3}>{services.map(service => <article className={styles.serviceCard} key={service.slug}><Image src={service.image} alt={service.name} width={800} height={600} sizes="(max-width: 800px) 100vw, 33vw" /><div><h3>{service.name}</h3><p>{service.summary}</p><Link className={styles.textLink} href={`/services/${service.slug}`}>Explore {service.name} ↗</Link></div></article>)}</div></section>
+  <section className={`${styles.section} ${styles.portfolio}`} id="portfolio"><div className={styles.sectionTitle}><div><p className={styles.kicker}>From the shop</p><h2>Real work. Real details.</h2></div><p>Every piece is an opportunity to make a team, business, or organization recognizable.</p></div><div className={styles.workGrid}><article className={styles.workCard}><Image src="/images/embroidered-caps-stx.jpg" alt="Custom embroidered STX Aero caps" fill sizes="(max-width: 800px) 100vw, 45vw" /><p>Custom caps for a South Texas aviation business</p></article><article className={styles.workCard}><Image src="/images/embroidered-caps-raf.jpg" alt="Custom embroidered RAF Motors caps" fill sizes="(max-width: 800px) 100vw, 28vw" /><p>Logo embroidery on caps</p></article><article className={styles.workCard}><Image src="/images/embro-xpress-storefront.jpg" alt="Embro Xpress storefront in McAllen" fill sizes="(max-width: 800px) 100vw, 28vw" /><p>Visit our McAllen shop</p></article></div></section>
+  <section className={styles.section}><div className={styles.sectionTitle}><div><p className={styles.kicker}>Across the RGV</p><h2>Local shop.<br />Regional reach.</h2></div><p>Our shop is based in McAllen and serves organizations throughout the Rio Grande Valley.</p></div><div className={styles.areaLinks}>{serviceAreas.map(area => <Link key={area.slug} href={`/service-areas/${area.slug}`}>Custom apparel in {area.name} ↗</Link>)}</div></section>
+  <section className={styles.contact} id="contact"><div className={styles.contactCopy}><p className={styles.kicker}>Let’s make it happen</p><h2>Ready to put your logo to work?</h2></div><div className={styles.contactInfo}><a href={site.phoneHref}>{site.phone}</a><a href={site.maps} target="_blank" rel="noreferrer">{site.address} ↗</a><a href={site.facebook} target="_blank" rel="noreferrer">Message us on Facebook ↗</a><div className={styles.hours}><b>Shop hours</b><br />Monday–Thursday: 8:00 AM–5:00 PM<br />Friday: 8:00 AM–2:00 PM<br />Saturday: By appointment only</div></div></section>
+</main><SiteFooter /><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} /></div>; }

@@ -13,13 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Embro Xpress | Custom Embroidery & Uniforms in McAllen, TX",
-  description: "Custom embroidery, uniforms, shirts, and caps in McAllen and the Rio Grande Valley.",
+  metadataBase: new URL("https://embro-xpress.vercel.app"),
+  title: { default: "Embro Xpress | Custom Embroidery, Screen Printing & DTF in McAllen, TX", template: "%s | Embro Xpress" },
+  description: "Embro Xpress provides custom embroidery, screen printing, and DTF printing for businesses, teams, and organizations in McAllen and the Rio Grande Valley.",
+  alternates: { canonical: "/" },
+  icons: { icon: "/images/embro-xpress-logo.jpg" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en-US" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>{children}</body>
     </html>
   );
