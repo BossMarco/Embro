@@ -1,0 +1,67 @@
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.buttonSecondary {
+  display: inline-flex;
+  padding: 12px 17px;
+  border: 1px solid #13171d;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+.buttonSecondary:hover {
+  background: #13171d;
+  color: #fff;
+}
+.workCard img {
+  transition: transform 0.7s ease;
+}
+.workCard:hover img {
+  transform: scale(1.05);
+}
+.workCard p {
+  display: grid;
+  gap: 4px;
+}
+.workCard p span {
+  color: #d4d7dc;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.faqList {
+  margin-top: 35px;
+  border-top: 1px solid #d5d5d1;
+}
+.faqList details {
+  border-bottom: 1px solid #d5d5d1;
+  padding: 17px 0;
+}
+.faqList summary {
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+  padding-right: 28px;
+  position: relative;
+}
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+.faqList summary::after {
+  color: #ed2b36;
+  content: "+";
+  font-size: 1.35rem;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+}
+.faqList details[open] summary::after {
+  content: "−";
+}
+.faqList p {
+  margin: 13px 28px 0 0;
+}
